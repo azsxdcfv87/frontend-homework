@@ -27,13 +27,12 @@ function throttle(fn, delay) {
     if (!lastTime || timeDiff >= delay) {
       fn.apply(this, args);
       lastTime = currentTime;
-    } else {
-      // 如果在延遲時間內再次調用，則重新設定定時器
+
+      // 設置新的計時器，確保下一次執行在 delay 時間後
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        fn.apply(this, args);
-        lastTime = new Date().getTime();
-      }, delay - timeDiff);
+        timeoutId = null; // 清空 timeoutId，以便下一次呼叫可以正確設置新的計時器
+      }, delay);
     }
   };
 }
@@ -47,18 +46,6 @@ const throttleFn = throttle(fn, 1000);
 
 // 測試
 throttleFn(); // 打印 "Executing!"
-setTimeout(() => {
-  throttleFn(); // 在 1 秒內不會執行
-}, 500); // 在 500 毫秒後再次調用
-setTimeout(() => {
-  throttleFn(); // 在 1 秒內不會執行
-}, 1500); // 在 1500 毫秒後再次調用
+throttleFn(); // 在 1 秒內不會執行
+throttleFn(); // 在 1 秒內不會執行
 
-// // 使用 throttle 函數
-// const throttleFn = throttle(fn, 1000);
-
-// // 測試
-// throttleFn(); // 打印 "Executing!"
-// throttleFn(); // 在 1 秒內不會執行
-// throttleFn(); // 在 1 秒內不會執行
-// // 等待 1 秒後再次執行，打印 "Executing!"
