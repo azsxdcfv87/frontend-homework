@@ -5,4 +5,60 @@
 // throttleFn();
 // throttleFn();
 // throttleFn();
-// // only execute once after 1s
+// // only execute once after 1
+
+// 理解題目含義是，設定一個 throttle function
+// 內部函數要確認原本的時間跟經過的時間相減是否大於 1
+// 大於 1 時則執行，小於 1 時則不執行
+// 大於 1 執行後，將時間重新設定，起始時間為第一次執行的最終時間，直到第二次的執行時間大於 1 再次迴圈
+
+function throttle(fn, delay) {
+  let lastTime = 0;
+  let timeoutId = null;
+
+  return function () {
+    const currentTime = new Date().getTime();
+    const args = Array.from(arguments);
+
+    // 計算距離上次執行的時間間隔
+    const timeDiff = currentTime - lastTime;
+
+    // 如果時間間隔大於設定的延遲時間，則執行函數
+    if (!lastTime || timeDiff >= delay) {
+      fn.apply(this, args);
+      lastTime = currentTime;
+    } else {
+      // 如果在延遲時間內再次調用，則重新設定定時器
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        fn.apply(this, args);
+        lastTime = new Date().getTime();
+      }, delay - timeDiff);
+    }
+  };
+}
+
+// 定義實際的函數 fn
+function fn() {
+  console.log('Executing!');
+}
+
+const throttleFn = throttle(fn, 1000);
+
+// 測試
+throttleFn(); // 打印 "Executing!"
+setTimeout(() => {
+  throttleFn(); // 在 1 秒內不會執行
+}, 500); // 在 500 毫秒後再次調用
+setTimeout(() => {
+  throttleFn(); // 在 1 秒內不會執行
+}, 1500); // 在 1500 毫秒後再次調用
+
+// // 使用 throttle 函數
+// const throttleFn = throttle(fn, 1000);
+
+// // 測試
+// throttleFn(); // 打印 "Executing!"
+// throttleFn(); // 在 1 秒內不會執行
+// throttleFn(); // 在 1 秒內不會執行
+// // 等待 1 秒後再次執行，打印 "Executing!"
