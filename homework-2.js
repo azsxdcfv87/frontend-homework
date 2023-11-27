@@ -26,7 +26,7 @@ function throttle(fn, delay) {
       lastCallTime = currentTime;
     } else if (!timeout) {
       timeout = setTimeout(() => {
-        timeout = null; // 重置 timeout
+        timeout = null;
         fn();
         lastCallTime = Date.now();
       }, delay - elapsedTime);
@@ -34,7 +34,6 @@ function throttle(fn, delay) {
   };
 }
 
-// 使用例子
 const throttleFn = throttle(() => {
   console.log('Function executed!');
 }, 1000);
@@ -43,4 +42,6 @@ throttleFn();
 throttleFn();
 throttleFn();
 setTimeout(throttleFn, 995)
-setTimeout(throttleFn, 1005)
+// setTimeout(throttleFn, 1005)
+// setTimeout(throttleFn, 1645)
+// setTimeout(throttleFn, 1885)
