@@ -8,3 +8,4 @@
 // throttleFn(4);
 // throttleFn(5);
 // // only execute once after 1s, and take the latest argument 5
+
