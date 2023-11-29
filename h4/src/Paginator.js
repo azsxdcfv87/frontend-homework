@@ -1,35 +1,34 @@
 // Paginator.js
 import React, { useState } from 'react';
 
-class Paginator {
-  constructor({ page, total, pageSize }) {
-    this.page = page;
-    this.total = total;
-    this.pageSize = pageSize;
-  }
+const Paginator = ({ page, total, pageSize, onPageChange }) => {
+  const [currentPage, setCurrentPage] = useState(page);
 
-  getCurrentPage() {
-    const start = (this.page - 1) * this.pageSize;
-    const end = Math.min(this.page * this.pageSize - 1, this.total - 1);
-    return { page: this.page, start, end };
-  }
+  const getCurrentPage = () => {
+    const start = (currentPage - 1) * pageSize + 1;
+    const end = Math.min(currentPage * pageSize, total);
+    return { page: currentPage, start, end };
+  };
 
-  nextPage() {
-    this.page = Math.min(this.page + 1, Math.ceil(this.total / this.pageSize));
-    return this.getCurrentPage();
-  }
+  const nextPage = () => {
+    const nextPageValue = Math.min(currentPage + 1, Math.ceil(total / pageSize));
+    setCurrentPage(nextPageValue);
+    onPageChange(getCurrentPage());
+  };
 
-  prevPage() {
-    this.page = Math.max(this.page - 1, 1);
-    return this.getCurrentPage();
-  }
+  const prevPage = () => {
+    const prevPageValue = Math.max(currentPage - 1, 1);
+    setCurrentPage(prevPageValue);
+    onPageChange(getCurrentPage());
+  };
 
-  goToPage(page) {
-    this.page = Math.max(1, Math.min(page, Math.ceil(this.total / this.pageSize)));
-    return this.getCurrentPage();
-  }
+  const goToPage = (targetPage) => {
+    const newPage = Math.max(1, Math.min(targetPage, Math.ceil(total / pageSize)));
+    setCurrentPage(newPage);
+    onPageChange(getCurrentPage());
+  };
 
-  static generatePageNumbers({ page, total, pageSize }) {
+  const renderPageNumbers = () => {
     const pageCount = Math.ceil(total / pageSize);
     const pageNumbers = [];
 
@@ -39,30 +38,40 @@ class Paginator {
 
     if (pageCount <= 5) {
       for (let i = 1; i <= pageCount; i++) {
-        pageNumbers.push({ display: i.toString(), href: `/page/${i}` });
+        pageNumbers.push(<span key={i} onClick={() => goToPage(i)}>{i}</span>);
       }
     } else {
-      const mid = Math.max(3, Math.min(pageCount - 2, page));
+      const mid = Math.max(3, Math.min(pageCount - 2, currentPage));
 
-      pageNumbers.push({ display: '1', href: '/page/1' });
+      pageNumbers.push(<span key={1} onClick={() => goToPage(1)}>1</span>);
       if (mid > 3) {
-        pageNumbers.push({ display: '...', href: null });
+        pageNumbers.push(<span key="ellipsis1">...</span>);
       }
 
       for (let i = mid - 1; i <= mid + 1; i++) {
-        pageNumbers.push({ display: i.toString(), href: `/page/${i}` });
+        pageNumbers.push(<span key={i} onClick={() => goToPage(i)}>{i}</span>);
       }
 
       if (mid < pageCount - 2) {
-        pageNumbers.push({ display: '...', href: null });
+        pageNumbers.push(<span key="ellipsis2">...</span>);
       }
 
-      pageNumbers.push({ display: pageCount.toString(), href: `/page/${pageCount}` });
+      pageNumbers.push(<span key={pageCount} onClick={() => goToPage(pageCount)}>{pageCount}</span>);
     }
 
     return pageNumbers;
-  }
-}
+  };
+
+  return (
+    <div className="paginator">
+      <button onClick={prevPage}>Prev</button>
+      <span>{`Page ${getCurrentPage().page}: ${getCurrentPage().start} - ${getCurrentPage().end} of ${total}`}</span>
+      <button onClick={nextPage}>Next</button>
+      <div className="page-numbers">
+        {renderPageNumbers()}
+      </div>
+    </div>
+  );
+};
 
 export default Paginator;
-
