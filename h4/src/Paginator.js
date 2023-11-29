@@ -4,6 +4,7 @@ import './Paginator.css'; // 引入自定义的样式文件
 
 const Paginator = ({ page, total, pageSize, onPageChange }) => {
   const [currentPage, setCurrentPage] = useState(page);
+  const [targetPage, setTargetPage] = useState('');
 
   const getCurrentPage = () => {
     const start = (currentPage - 1) * pageSize + 1;
@@ -79,6 +80,13 @@ const Paginator = ({ page, total, pageSize, onPageChange }) => {
     <div className="paginator-container">
       <div className="paginator">
         <span>{`Page ${getCurrentPage().page}: ${getCurrentPage().start} - ${getCurrentPage().end} of ${total}`}</span>
+        <input
+          type="number"
+          value={targetPage}
+          onChange={(e) => setTargetPage(e.target.value)}
+          placeholder="Go to page"
+        />
+        <button className="page-button" onClick={goToPage}>Go</button>
       </div>
       <div className="page-numbers">
         <button className="page-button" onClick={prevPage}>&#9664;</button>
