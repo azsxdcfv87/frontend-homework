@@ -39,37 +39,39 @@ const Paginator = ({ page, total, pageSize, onPageChange }) => {
 
     if (pageCount <= 5) {
       for (let i = 1; i <= pageCount; i++) {
-        pageNumbers.push(<span key={i} onClick={() => goToPage(i)}>{i}</span>);
+        pageNumbers.push(<span className="page-number" key={i} onClick={() => goToPage(i)}>{i}</span>);
       }
     } else {
       const mid = Math.max(3, Math.min(pageCount - 2, currentPage));
 
-      pageNumbers.push(<span key={1} onClick={() => goToPage(1)}>1</span>);
+      pageNumbers.push(<span className="page-number" key={1} onClick={() => goToPage(1)}>1</span>);
       if (mid > 3) {
-        pageNumbers.push(<span key="ellipsis1">...</span>);
+        pageNumbers.push(<span className="page-number" key="ellipsis1">...</span>);
       }
 
       for (let i = mid - 1; i <= mid + 1; i++) {
-        pageNumbers.push(<span key={i} onClick={() => goToPage(i)}>{i}</span>);
+        pageNumbers.push(<span className="page-number" key={i} onClick={() => goToPage(i)}>{i}</span>);
       }
 
       if (mid < pageCount - 2) {
-        pageNumbers.push(<span key="ellipsis2">...</span>);
+        pageNumbers.push(<span className="page-number" key="ellipsis2">...</span>);
       }
 
-      pageNumbers.push(<span key={pageCount} onClick={() => goToPage(pageCount)}>{pageCount}</span>);
+      pageNumbers.push(<span className="page-number" key={pageCount} onClick={() => goToPage(pageCount)}>{pageCount}</span>);
     }
 
     return pageNumbers;
   };
 
   return (
-    <div className="paginator">
-      <button onClick={prevPage}>Prev</button>
-      <span>{`Page ${getCurrentPage().page}: ${getCurrentPage().start} - ${getCurrentPage().end} of ${total}`}</span>
-      <button onClick={nextPage}>Next</button>
+    <div className="paginator-container">
+      <div className="paginator">
+        <span>{`Page ${getCurrentPage().page}: ${getCurrentPage().start} - ${getCurrentPage().end} of ${total}`}</span>
+      </div>
       <div className="page-numbers">
-        {renderPageNumbers()}
+        <button className="page-button" onClick={prevPage}>&#9664;</button>
+          {renderPageNumbers()}
+        <button className="page-button" onClick={nextPage}>&#9654;</button>
       </div>
     </div>
   );
