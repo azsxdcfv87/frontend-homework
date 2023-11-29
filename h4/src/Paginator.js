@@ -1,5 +1,6 @@
 // Paginator.js
 import React, { useState } from 'react';
+import './Paginator.css'; // 引入自定义的样式文件
 
 const Paginator = ({ page, total, pageSize, onPageChange }) => {
   const [currentPage, setCurrentPage] = useState(page);

@@ -1,0 +1,27 @@
+/* Paginator.css */
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginator button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  cursor: pointer;
+  margin: 0 2px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.paginator button:hover {
+  background-color: #ddd;
+}
+
+.paginator button.active {
+  background-color: #4caf50;
+  color: white;
+}
