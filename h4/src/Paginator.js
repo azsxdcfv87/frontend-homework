@@ -1,4 +1,3 @@
-// Paginator.js
 import React, { useState } from 'react';
 import './Paginator.css';
 
