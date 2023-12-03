@@ -1,4 +1,38 @@
 /* styles.css */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  margin: 0 2.5px;
+  color: black;
+  width: 20px;
+  height: 32px;
+  padding: 0 6px;
+}
+
+a:link, a:visited{
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:none;
+  background-color: rgb(221, 216, 216);
+  color:gray;
+  border-radius: 50%;
+}
+a:active {
+  text-decoration:none;
+  background-color:rgb(87, 66, 66);
+  color:#fafafa;
+  border-radius: 50%;
+}
+
 .pagination {
   display: flex;
   list-style: none;

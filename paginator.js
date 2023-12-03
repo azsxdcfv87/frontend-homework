@@ -20,9 +20,37 @@ class Paginator {
     const totalPages = Math.ceil(total / pageSize);
     const pages = [];
 
-    // 簡單地生成頁碼
-    for (let i = 1; i <= totalPages; i++) {
-      pages.push({ display: i.toString() });
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push({ display: i.toString() });
+      }
+    } else {
+      const mid = Math.ceil(7 / 2);
+
+      if (page <= mid) {
+        // 前半部分
+        for (let i = 1; i <= 5; i++) {
+          pages.push({ display: i.toString() });
+        }
+        pages.push({ display: '...' });
+        pages.push({ display: totalPages.toString() });
+      } else if (page >= totalPages - mid + 1) {
+        // 後半部分
+        pages.push({ display: '1' });
+        pages.push({ display: '...' });
+        for (let i = totalPages - 4; i <= totalPages; i++) {
+          pages.push({ display: i.toString() });
+        }
+      } else {
+        // 中間部分
+        pages.push({ display: '1' });
+        pages.push({ display: '...' });
+        for (let i = page - mid + 3; i <= page + mid - 3; i++) {
+          pages.push({ display: i.toString() });
+        }
+        pages.push({ display: '...' });
+        pages.push({ display: totalPages.toString() });
+      }
     }
 
     return pages;
