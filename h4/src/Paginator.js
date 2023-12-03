@@ -38,6 +38,12 @@ const Paginator = ({ page, total, pageSize, onPageChange }) => {
     }
   };
 
+  const handlePageClick = (pageNumber, event) => {
+    event.preventDefault();
+    setCurrentPage(pageNumber);
+    onPageChange(getCurrentPage());
+  };
+
   const renderPageNumbers = () => {
     const pageCount = Math.ceil(total / pageSize);
     const pageNumbers = [];
@@ -53,28 +59,28 @@ const Paginator = ({ page, total, pageSize, onPageChange }) => {
 
     if (pageCount <= maxPageNumbers) {
       for (let i = 1; i <= pageCount; i++) {
-        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`} onClick={(e) => handlePageClick(i, e)}>{i}</a>);
       }
     } else if (isStart) {
       for (let i = 1; i <= maxPageNumbers - 2; i++) {
-        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`} onClick={(e) => handlePageClick(i, e)}>{i}</a>);
       }
       pageNumbers.push(<span className="page-number" key="ellipsis">...</span>);
-      pageNumbers.push(<a className="page-number" key={pageCount} href={`/page/${pageCount}`}>{pageCount}</a>);
+      pageNumbers.push(<a className="page-number" key={pageCount} href={`/page/${pageCount}`} onClick={(e) => handlePageClick(pageCount, e)}>{pageCount}</a>);
     } else if (isEnd) {
-      pageNumbers.push(<a className="page-number" key={1} href={`/page/${1}`}>{1}</a>);
+      pageNumbers.push(<a className="page-number" key={1} href={`/page/${1}`} onClick={(e) => handlePageClick(1, e)}>{1}</a>);
       pageNumbers.push(<span className="page-number" key="ellipsis">...</span>);
       for (let i = pageCount - maxPageNumbers + 3; i <= pageCount; i++) {
-        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`} onClick={(e) => handlePageClick(i, e)}>{i}</a>);
       }
     } else {
-      pageNumbers.push(<a className="page-number" key={1} href={`/page/${1}`}>{1}</a>);
+      pageNumbers.push(<a className="page-number" key={1} href={`/page/${1}`} onClick={(e) => handlePageClick(1, e)}>{1}</a>);
       pageNumbers.push(<span className="page-number" key="ellipsis1">...</span>);
       for (let i = currentPage - mid + 3; i <= currentPage + mid - 3; i++) {
-        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`} onClick={(e) => handlePageClick(i, e)}>{i}</a>);
       }
       pageNumbers.push(<span className="page-number" key="ellipsis2">...</span>);
-      pageNumbers.push(<a className="page-number" key={pageCount} href={`/page/${pageCount}`}>{pageCount}</a>);
+      pageNumbers.push(<a className="page-number" key={pageCount} href={`/page/${pageCount}`} onClick={(e) => handlePageClick(pageCount, e)}>{pageCount}</a>);
     }
 
     return pageNumbers;
