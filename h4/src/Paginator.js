@@ -52,32 +52,29 @@ const Paginator = ({ page, total, pageSize, onPageChange }) => {
     const isEnd = currentPage > pageCount - mid;
 
     if (pageCount <= maxPageNumbers) {
-      // If total pages are less than or equal to maxPageNumbers
       for (let i = 1; i <= pageCount; i++) {
-        pageNumbers.push(<span className="page-number" key={i} onClick={() => goToPage(i)}>{i}</span>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
       }
     } else if (isStart) {
-      // If current page is at the beginning
       for (let i = 1; i <= maxPageNumbers - 2; i++) {
-        pageNumbers.push(<span className="page-number" key={i} onClick={() => goToPage(i)}>{i}</span>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
       }
       pageNumbers.push(<span className="page-number" key="ellipsis">...</span>);
-      pageNumbers.push(<span className="page-number" key={pageCount} onClick={() => goToPage(pageCount)}>{pageCount}</span>);
+      pageNumbers.push(<a className="page-number" key={pageCount} href={`/page/${pageCount}`}>{pageCount}</a>);
     } else if (isEnd) {
-      // If current page is at the end
-      pageNumbers.push(<span className="page-number" key={1} onClick={() => goToPage(1)}>{1}</span>);
+      pageNumbers.push(<a className="page-number" key={1} href={`/page/${1}`}>{1}</a>);
       pageNumbers.push(<span className="page-number" key="ellipsis">...</span>);
       for (let i = pageCount - maxPageNumbers + 3; i <= pageCount; i++) {
-        pageNumbers.push(<span className="page-number" key={i} onClick={() => goToPage(i)}>{i}</span>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
       }
     } else {
-      pageNumbers.push(<span className="page-number" key={1} onClick={() => goToPage(1)}>{1}</span>);
+      pageNumbers.push(<a className="page-number" key={1} href={`/page/${1}`}>{1}</a>);
       pageNumbers.push(<span className="page-number" key="ellipsis1">...</span>);
       for (let i = currentPage - mid + 3; i <= currentPage + mid - 3; i++) {
-        pageNumbers.push(<span className="page-number" key={i} onClick={() => goToPage(i)}>{i}</span>);
+        pageNumbers.push(<a className="page-number" key={i} href={`/page/${i}`}>{i}</a>);
       }
       pageNumbers.push(<span className="page-number" key="ellipsis2">...</span>);
-      pageNumbers.push(<span className="page-number" key={pageCount} onClick={() => goToPage(pageCount)}>{pageCount}</span>);
+      pageNumbers.push(<a className="page-number" key={pageCount} href={`/page/${pageCount}`}>{pageCount}</a>);
     }
 
     return pageNumbers;
