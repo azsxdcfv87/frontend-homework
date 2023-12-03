@@ -37,3 +37,7 @@
 .page-number:hover {
   background-color: #ddd;
 }
+
+a {
+  text-decoration: none;
+}
