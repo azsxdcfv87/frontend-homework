@@ -41,7 +41,6 @@ const throttleFn = throttle(() => {
 throttleFn();
 throttleFn();
 throttleFn();
-setTimeout(throttleFn, 995)
 // setTimeout(throttleFn, 1005)
 // setTimeout(throttleFn, 1645)
 // setTimeout(throttleFn, 1885)
