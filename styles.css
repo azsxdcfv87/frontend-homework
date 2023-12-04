@@ -7,6 +7,13 @@ body {
   height: 100vh;
 }
 
+li:hover {
+  text-decoration:none;
+  background-color: rgb(221, 216, 216);
+  color:gray;
+  border-radius: 50%;
+}
+
 a {
   text-decoration: none;
   margin: 0 2.5px;
@@ -20,13 +27,7 @@ a:link, a:visited{
   text-decoration:none;
 }
 
-a:hover {
-  text-decoration:none;
-  background-color: rgb(221, 216, 216);
-  color:gray;
-  border-radius: 50%;
-}
-a:active {
+li:active {
   text-decoration:none;
   background-color:rgb(87, 66, 66);
   color:#fafafa;
@@ -42,4 +43,9 @@ a:active {
 .pagination li {
   margin: 0 5px;
   cursor: pointer;
+}
+
+.current-page {
+  background-color: yellow;
+  border-radius: 50%;
 }

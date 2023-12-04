@@ -1,6 +1,6 @@
 // app.js
 // 初始化 Paginator
-const paginator = new Paginator({ total: 100, pageSize: 10, page: 1 });
+const paginator = new Paginator({ page: 1, total: 100, pageSize: 10 });
 const lastPage = Math.ceil(paginator.total / paginator.pageSize);
 // 渲染頁碼器
 renderPaginator();
@@ -14,7 +14,6 @@ function renderPaginator() {
   paginationList.classList.add('pagination');
 
   const currentPage = paginator.getCurrentPage().page;
-
   // 上一頁按鈕
   const prevPageItem = createPaginationItem('‹', () => handlePageClick(currentPage - 1));
   paginationList.appendChild(prevPageItem);
@@ -27,6 +26,10 @@ function renderPaginator() {
   });
   pageNumbers.forEach((pageNumber) => {
     const pageItem = createPaginationItem(pageNumber.display, () => handlePageClick(+pageNumber.display));
+    // 判斷是否為當前頁碼，加入特殊樣式
+    if (+pageNumber.display === currentPage) {
+      pageItem.classList.add('current-page');
+    }
     paginationList.appendChild(pageItem);
   });
 
@@ -44,7 +47,7 @@ function createPaginationItem(text, onClick) {
   const currentPage = paginator.getCurrentPage().page;
   link.textContent = text;
 
-  if (text === '‹' || text === '›') {
+  if (text === '‹' || text === '›' || text === '...') {
     link.href = '#';  // 對於 < 和 >，將 href 設置為 #
   } else {
     link.href = `/page/${text}`;  // 對於數字頁碼，將 href 設置為相應的 URL
