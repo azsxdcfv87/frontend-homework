@@ -47,9 +47,9 @@ function createPaginationItem(text, onClick) {
   const currentPage = paginator.getCurrentPage().page;
   link.textContent = text;
 
-  if (text === '‹' || text === '›' || text === '...') {
+  if (text === '‹' || text === '›') {
     link.href = '#';  // 對於 < 和 >，將 href 設置為 #
-  } else {
+  } else if (text !== '...') {
     link.href = `/page/${text}`;  // 對於數字頁碼，將 href 設置為相應的 URL
   }
 
