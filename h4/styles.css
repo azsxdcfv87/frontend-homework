@@ -18,9 +18,9 @@ a {
   text-decoration: none;
   margin: 0 2.5px;
   color: black;
-  width: 20px;
+  width: 32px;
   height: 32px;
-  padding: 0 6px;
+  padding: 0 5px;
 }
 
 a:link, a:visited{

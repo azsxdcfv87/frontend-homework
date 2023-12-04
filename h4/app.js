@@ -1,6 +1,6 @@
 // app.js
 // 初始化 Paginator
-const paginator = new Paginator({ page: 1, total: 100, pageSize: 10 });
+const paginator = new Paginator({ page: 1, total: 200, pageSize: 10 });
 const lastPage = Math.ceil(paginator.total / paginator.pageSize);
 // 渲染頁碼器
 renderPaginator();
