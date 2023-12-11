@@ -51,6 +51,8 @@ function createPaginationItem(text, onClick) {
     link.href = '#';  // 對於 < 和 >，將 href 設置為 #
   } else if (text !== '...') {
     link.href = `/page/${text}`;  // 對於數字頁碼，將 href 設置為相應的 URL
+  } else {
+    listItem.classList.add('non-clickable');
   }
 
   link.addEventListener('click', (event) => {

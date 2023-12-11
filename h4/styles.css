@@ -44,6 +44,13 @@ body {
   cursor: pointer;
 }
 
+.pagination .non-clickable:hover,
+.pagination .non-clickable:active {
+  background-color: initial;
+  color: initial;
+  cursor: default;
+}
+
 .current-page {
   background-color: yellow;
   border-radius: 50%;

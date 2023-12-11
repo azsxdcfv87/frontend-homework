@@ -32,23 +32,23 @@ class Paginator {
         for (let i = 1; i <= 5; i++) {
           pages.push({ display: i.toString() });
         }
-        pages.push({ display: '...', href: null });
+        pages.push({ display: '...', href: null, class: 'non-clickable' });
         pages.push({ display: totalPages.toString() });
       } else if (page >= totalPages - mid + 1) {
         // 後半部分
         pages.push({ display: '1' });
-        pages.push({ display: '...', href: null });
+        pages.push({ display: '...', href: null, class: 'non-clickable' });
         for (let i = totalPages - 4; i <= totalPages; i++) {
           pages.push({ display: i.toString() });
         }
       } else {
         // 中間部分
         pages.push({ display: '1' });
-        pages.push({ display: '...', href: null });
+        pages.push({ display: '...', href: null, class: 'non-clickable' });
         for (let i = page - mid + 3; i <= page + mid - 3; i++) {
           pages.push({ display: i.toString() });
         }
-        pages.push({ display: '...', href: null });
+        pages.push({ display: '...', href: null, class: 'non-clickable' });
         pages.push({ display: totalPages.toString() });
       }
     }
