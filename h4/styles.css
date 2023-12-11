@@ -21,7 +21,6 @@ body {
   color: black;
   width: 28px;
   height: 28px;
-  line-height: 28px;
 }
 
 .pagination li a:link, .pagination li a:visited {
