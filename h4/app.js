@@ -4,7 +4,7 @@ const paginator = new Paginator({ page: 1, total: 200, pageSize: 10 });
 const lastPage = Math.ceil(paginator.total / paginator.pageSize);
 // 渲染頁碼器
 renderPaginator();
-
+// function 放的位置差異 作業
 // 渲染頁碼器的函數
 function renderPaginator() {
   const container = document.getElementById('paginator-container');

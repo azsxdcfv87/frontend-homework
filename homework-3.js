@@ -8,6 +8,7 @@
 // throttleFn(4);
 // throttleFn(5);
 // // only execute once after 1s, and take the latest argument 5
+// 閉包 效果 可能會壞掉 查詢
 
 function throttle(fn, delay) {
   let lastCallTime = 0;

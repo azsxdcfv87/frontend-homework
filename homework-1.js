@@ -5,7 +5,8 @@
 
 // 以範例來看， myFlat 要完成的是將巢狀結構的 array 扁平化
 // 實際查詢的情況與範例最後產生的情況相同
-
+// bigO 時間複雜度為 O(n^2) 查詢
+// 邊際情況 查詢
 Array.prototype.myFlat = function() {
   let flattenArray = [];
   this.forEach((item) => {

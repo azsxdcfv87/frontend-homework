@@ -23,9 +23,9 @@ class Paginator {
     if (totalPages <= 7) {
       for (let i = 1; i <= totalPages; i++) {
         pages.push({ display: i.toString() });
-      }
+      } // homework 什麼情況用 for 跟 ForEach 差別
     } else {
-      const mid = Math.ceil(7 / 2);
+      const mid = Math.ceil(7 / 2); // 變數取名 
 
       if (page <= mid) {
         // 前半部分
