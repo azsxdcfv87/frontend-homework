@@ -22,7 +22,6 @@ body {
   width: 28px;
   height: 28px;
   line-height: 28px;
-  overflow: hidden;
 }
 
 .pagination li a:link, .pagination li a:visited {
