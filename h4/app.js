@@ -54,6 +54,9 @@ function createPaginationItem(text, onClick) {
   }
 
   link.addEventListener('click', (event) => {
+    if (text === '...') {
+      return;  // 如果是 '...'，則不添加點擊事件
+    }
     event.preventDefault();  // 阻止默認行為
     onClick();  // 調用點擊事件處理函數
     if (text !== '‹' && text !== '›') {
