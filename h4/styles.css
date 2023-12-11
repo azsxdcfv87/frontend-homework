@@ -14,12 +14,15 @@ body {
 }
 
 .pagination li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
-  margin: 0 2.5px;
   color: black;
-  width: 32px;
-  height: 32px;
-  padding: 0 5px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  overflow: hidden;
 }
 
 .pagination li a:link, .pagination li a:visited {
@@ -40,7 +43,7 @@ body {
 }
 
 .pagination li {
-  margin: 0 5px;
+  margin: 0 3px;
   cursor: pointer;
 }
 
