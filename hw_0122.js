@@ -52,17 +52,15 @@ function printArray3() {
     arr.push(randomNumber);
   }
 
-  const checkAndPoint = function (prev, current, next) {
-    if (current > prev && current > next) {
-      console.log(prev, current, next);
+  function checkAndPrint(arr, i) {
+    let left = i === 0 ? arr[arr.length - 1] : arr[i - 1];
+    let right = i === arr.length - 1 ? arr[0] : arr[i + 1];
+    if (arr[i] > left && arr[i] > right) {
+      console.log(left, arr[i], right);
     }
   }
-  // 檢查第一個元素是否比第二個元素和最後一個元素都大
-  checkAndPoint(arr[arr.length - 1], arr[0], arr[1]);
-  // 用 forloop 檢查中間元素
-  for (let i = 1; i < arr.length - 2; i++) {
-    checkAndPoint(arr[i - 1], arr[i], arr[i + 1]);
-  }
-  // 檢查最後一個元素是否比第一個元素和倒數第二個元素都大
-  checkAndPoint(arr[arr.length - 2], arr[arr.length - 1], arr[0]);
+
+  arr.forEach((current, i) => {
+    checkAndPrint(arr, i);
+  });
 }
