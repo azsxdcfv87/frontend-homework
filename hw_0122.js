@@ -8,13 +8,14 @@ function printArray1() {
     let randomNumber = Math.floor(Math.random() * 3001) - 1000;
     arr.push(randomNumber);
   }
-  for (let i = 1; i < arr.length - 2; i++) {
-    // 檢查當前元素是否比其前後的元素都大
-    if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+  arr.forEach((current, i) => {
+    // 一二、檢查是否非第一個元素，且非最後一個元素
+    // 三四、檢查當前元素是否比其前後的元素都大
+    if (i > 0 && i < arr.length - 1 && current > arr[i - 1] && current > arr[i + 1]) {
       // 如果是，則輸出前一個元素、當前元素和後一個元素
-      console.log(arr[i - 1], arr[i], arr[i + 1]);
+      console.log(arr[i - 1], current, arr[i + 1]);
     }
-  }
+  });
 }
 
 function printArray2() {
@@ -27,21 +28,17 @@ function printArray2() {
     let randomNumber = Math.floor(Math.random() * 3001) - 1000;
     arr.push(randomNumber);
   }
-  // 檢查第一個元素是否比第二個元素和最後一個元素都大
-  if (arr[0] > arr[1] && arr[0] > arr[arr.length - 1]) {
-    console.log(arr[arr.length - 1], arr[0], arr[1]);
-  }
-  for (let i = 1; i < arr.length - 2; i++) {
-    // 檢查當前元素是否比其前後的元素都大
-    if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
-      // 如果是，則輸出前一個元素、當前元素和後一個元素
-      console.log(arr[i - 1], arr[i], arr[i + 1]);
+  arr.forEach((current, i) => {
+    if(i === 0 && current > arr[1] && current > arr[arr.length - 1]) {
+      console.log(arr[arr.length - 1], current, arr[1]);
     }
-  }
-  // 檢查最後一個元素是否比第一個元素和倒數第二個元素都大
-  if (arr[arr.length - 1] > arr[arr.length - 2] && arr[arr.length - 1] > arr[0]) {
-    console.log(arr[arr.length - 2], arr[arr.length - 1], arr[0]);
-  }
+    if(i > 0 && i < arr.length - 1 && current > arr[i - 1] && current > arr[i + 1]) {
+      console.log(arr[i - 1], current, arr[i + 1]);
+    }
+    if(i === arr.length - 1 && current > arr[arr.length - 2] && current > arr[0]) {
+      console.log(arr[arr.length - 2], current, arr[0]);
+    }
+  });
 }
 
 function printArray3() {
@@ -55,17 +52,15 @@ function printArray3() {
     arr.push(randomNumber);
   }
 
-  const checkAndPoint = function (prev, current, next) {
-    if (current > prev && current > next) {
-      console.log(prev, current, next);
+  function checkAndPrint(arr, i) {
+    let left = i === 0 ? arr[arr.length - 1] : arr[i - 1];
+    let right = i === arr.length - 1 ? arr[0] : arr[i + 1];
+    if (arr[i] > left && arr[i] > right) {
+      console.log(left, arr[i], right);
     }
   }
-  // 檢查第一個元素是否比第二個元素和最後一個元素都大
-  checkAndPoint(arr[0], arr[1], arr[arr.length - 1]);
-  // 用 forloop 檢查中間元素
-  for (let i = 1; i < arr.length - 2; i++) {
-    checkAndPoint(arr[i - 1], arr[i], arr[i + 1]);
-  }
-  // 檢查最後一個元素是否比第一個元素和倒數第二個元素都大
-  checkAndPoint(arr[arr.length - 2], arr[arr.length - 1], arr[0]);
+
+  arr.forEach((current, i) => {
+    checkAndPrint(arr, i);
+  });
 }
