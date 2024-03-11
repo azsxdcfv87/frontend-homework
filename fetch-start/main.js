@@ -7,6 +7,7 @@ function updateDisplay(verse) {
 
   fetch(url)
     .then((response) => {
+      // 若是 HTTP 響應失敗，則拋出錯誤
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
