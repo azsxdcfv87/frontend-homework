@@ -3,19 +3,19 @@ const button = document.querySelector('button');
 const ul = document.querySelector('ul');
 
 button.addEventListener('click', () => {
-  let item = input.value;
+  let content = input.value
   input.value = '';
 
   const li = document.createElement('li');
   const span = document.createElement('span');
   const deleteButton = document.createElement('button');
 
-  span.textContent = item;
-  deleteButton.textContent = 'Delete';
-
+  ul.appendChild(li);
   li.appendChild(span);
   li.appendChild(deleteButton);
-  ul.appendChild(li);
+
+  span.textContent = content;
+  deleteButton.textContent = 'Delete';
 
   deleteButton.addEventListener('click', () => {
     ul.removeChild(li);
