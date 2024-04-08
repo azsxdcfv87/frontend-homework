@@ -1,3 +1,5 @@
+document.getElementById('calculateButton').addEventListener('click', calculatePrime);
+
 function nthPrime(n) {
   return new Promise((resolve) => {
     let primes = [];
