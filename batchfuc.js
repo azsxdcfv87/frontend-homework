@@ -1,22 +1,15 @@
 let executeCount = 0;
 
-// function batch(func) {
-//   // 函數內容
-// }
-// const batch = function(func) {
-//   // 函數內容
-// }
-const batch = (func) => {
+function batch(func) {
   let promise;
   let args = [];
   return (numbers) => {
     args.push(...numbers);
-    if (!promise) {
+    if (!promise || args.length > 0) {
       promise = new Promise((resolve) => {
-        resolve(func(args));
-        executeCount++;
-        promise = null;
+        const results = func(args);
         args = [];
+        resolve(results);
       });
     }
     return promise;
@@ -37,10 +30,20 @@ async function runBatchedFunc() {
   console.log(r1);  // 輸出：[2, 4, 6]
   console.log(r2);  // 輸出：[8, 10]
   console.log(r3);  // 輸出：[12, 14, 16, 18]
-  console.log(executeCount);  // 輸出：1
+
+  return Promise.all([r1, r2, r3]).then(() => {
+    executeCount++;
+    console.log(executeCount);  // 輸出：1
+  });
 }
 
+
 runBatchedFunc();
+
+// r1: [2, 4, 6]
+// r2: [8, 10]
+// r3: [12, 14, 116, 18]
+// executeCount: 1  <--- need to be one
 // -------------------------
 // (Bonus) Create a batch function. The batchedFunc will execute once even invoke 3 times in Promise.all. let executeCount = 0;
 
