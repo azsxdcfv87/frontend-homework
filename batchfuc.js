@@ -9,8 +9,8 @@ let executeCount = 0;
 const batch = (func) => {
   let promise;
   let args = [];
-  return (nums) => {
-    args.push(...nums);
+  return (numbers) => {
+    args.push(...numbers);
     if (!promise) {
       promise = new Promise((resolve) => {
         resolve(func(args));
@@ -23,8 +23,8 @@ const batch = (func) => {
   };
 };
 
-const batchedFunc = batch((nums) => {
-  return nums.map((x) => x * 2);
+const batchedFunc = batch((numbers) => {
+  return numbers.map((x) => x * 2);
 });
 
 async function runBatchedFunc() {
