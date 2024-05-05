@@ -16,13 +16,13 @@ body {
   height: 200vh;
 }
 
-/* .main-content {
+.main-content {
   flex: 90%;
 }
 
 footer {
   flex: 10%;
-} */
+}
 
 .Footer_Content {
   background-color: rgb(35, 35, 35);
