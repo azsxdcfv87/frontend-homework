@@ -29,7 +29,6 @@ footer {
   color: white;
   text-align: center;
   width: 100%;
-  height: 325px;
   padding: 68px 0 20px 0;
 }
 
@@ -41,7 +40,6 @@ footer {
   align-items: center;
   text-align: left;
   margin: 0 240px 60px;
-  height: 141px;
   padding: 0 16px;
 }
 
@@ -131,4 +129,75 @@ a {
   font-size: 12px;
   margin-top: 8px;
   color: rgb(155, 155, 155);
+}
+
+
+
+/* RWD 768px */
+@media (max-width: 768px) {
+  .Footer_Section {
+    margin: 0;
+  }
+  
+  .Footer_Content {
+    height: auto;
+    padding: 64px 0 40px 0;
+  }
+
+  .Footer_Section {
+    flex-direction: column;
+    margin-bottom: 56px;
+  }
+
+  .Footer_SectionItem {
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  .Footer_SectionItem:last-child {
+    margin-bottom: 0;
+  }
+
+  .Footer_Language {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Footer_SubFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 28px 60px 20px;
+    margin: 0;
+  }
+
+  .Social_Content {
+    margin-bottom: 40px;
+  }
+
+  .Company_Content {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .Company_Logo {
+    justify-content: flex-end;
+  }
+
+  .Company_Logo > img:not(:last-child){
+    max-height: 18px;
+    margin-right: 8px;
+  }
+
+  .Company_Name {
+    font-size: 12px;
+    margin-top: 8px;
+    color: rgb(155, 155, 155);
+  }
 }
