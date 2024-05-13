@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden;
 }
 body .NavHeader {
   display: flex;
@@ -39,8 +40,6 @@ body .chatList-Container .ChatDefault {
   max-width: 960px;
   padding-top: 40px;
   border-left: 1px solid rgba(100, 100, 100, 0.15);
-  overflow: auto;
-  margin-right: -15px;
 }
 body .chatList-Container .ChatDefault .ChatDefaulAll {
   padding-top: 240px;
@@ -62,7 +61,7 @@ body .chatList-Container .ChatDefault .ChatDefaultContent {
 body .chatList-Container .ChatDefault .NewChatBtn {
   font-size: 16px;
   font-weight: 600;
-  padding: 10px 30px;
+  padding: 9px 29px 10px;
   border-radius: 4px;
   border: 1px solid white;
   line-height: 1;
