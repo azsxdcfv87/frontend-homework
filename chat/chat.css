@@ -1,0 +1,187 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.15;
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+body .NavHeader {
+  display: flex;
+  height: 64px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+body .chatList-Container {
+  display: flex;
+  margin-top: 64px;
+  height: 100%;
+  border-top: 1px solid rgba(100, 100, 100, 0.15);
+  /* 開始聊天 */
+}
+body .chatList-Container .ChatList {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 360px;
+  width: 360px;
+}
+body .chatList-Container .ChatList .ChatHeader {
+  margin-top: 12px;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 12px;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTitle .ChatHeaderTitleContent {
+  font-size: 22px;
+  font-weight: 600;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTitle .ChatHeaderTitleRight .ChatHeaderBuyDiamond {
+  margin-left: 8px;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabAll, body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabUnread, body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabPin {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 16px;
+  padding: 10px 2px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .chatList-Container .ChatList .UserCategory {
+  display: flex;
+  flex-direction: row;
+  margin-left: 16px;
+  padding-top: 18px;
+  padding-bottom: 16px;
+  overflow-y: auto;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator {
+  padding-top: 6px;
+  width: 76px;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator .CategoryCreatorAvatar {
+  border-radius: 50%;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator .CategoryCreatorDisplayName {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator .CategoryCreatorName {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(221, 221, 221, 0.8);
+  margin-top: 2px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator:not(:last-child) {
+  margin-right: 12px;
+}
+body .chatList-Container .ChatList .ChatListContent {
+  margin-top: 6px;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem {
+  display: flex;
+  height: 68px;
+  margin: 0 5px;
+  padding: 0 16px;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem img.ChatListAvatar {
+  margin-top: 10px;
+  border-radius: 50%;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail .ChatListAllName {
+  display: flex;
+  flex-direction: row;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail .ChatListAllName .ChatListDisplayName {
+  padding-left: 2px;
+  color: rgba(221, 221, 221, 0.8);
+  font-weight: 400;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail .ChatListContent {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+  margin-top: 12px;
+}
+body .chatList-Container .ChatDefault {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  max-width: 960px;
+  padding-top: 40px;
+  border-left: 1px solid rgba(100, 100, 100, 0.15);
+}
+body .chatList-Container .ChatDefault .ChatDefaulAll {
+  padding-top: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .chatList-Container .ChatDefault .ChatDefaultTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+body .chatList-Container .ChatDefault .ChatDefaultContent {
+  font-size: 16px;
+  color: rgb(100, 100, 100);
+  margin-bottom: 20px;
+}
+body .chatList-Container .ChatDefault .NewChatBtn {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 9px 29px 10px;
+  border-radius: 4px;
+  border: 1px solid white;
+  line-height: 1;
+}/*# sourceMappingURL=chat.css.map */
