@@ -72,9 +72,34 @@ body .NavHeader .NavHeaderAll nav.NavHeader_Right > *:not(:first-child) {
   display: flex;
   justify-content: center;
 }
-body .NavHeader .NavHeaderAll nav.NavHeader_Right .SearchInput {
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label {
+  display: flex;
+  border-radius: 20px;
   width: 260px;
   height: 40px;
+  background-color: rgb(71, 71, 71);
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label div.Search_Image {
+  background-color: rgb(71, 71, 71);
+  padding-left: 17px;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label img {
+  background-color: rgb(71, 71, 71);
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label .SearchInput {
+  padding-left: 4px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: rgb(71, 71, 71);
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label .SearchInput::-moz-placeholder {
+  color: white;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label .SearchInput::placeholder {
+  color: white;
 }
 body .NavHeader .NavHeaderAll nav.NavHeader_Right .NavHeader_Login {
   width: 58px;

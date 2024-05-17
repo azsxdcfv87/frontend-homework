@@ -67,9 +67,31 @@ body {
           display: flex;
           justify-content: center;
         }
-        .SearchInput {
+        div label {
+          display: flex;
+          border-radius: 20px;
           width: 260px;
           height: 40px;
+          background-color: rgb(71, 71, 71);
+          div.Search_Image {
+            background-color: rgb(71, 71, 71);
+            padding-left: 17px;
+            padding-top: 10px;
+            border-radius: 20px;
+          }
+          img {
+            background-color: rgb(71, 71, 71);
+          }
+          .SearchInput {
+            padding-left: 4px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: rgb(71, 71, 71);
+          }
+          .SearchInput::placeholder {
+            color: white;
+          }
         }
         .NavHeader_Login {
           width: 58px;
