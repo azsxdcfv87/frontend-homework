@@ -6,6 +6,7 @@
   line-height: 1.15;
   background-color: rgb(25, 25, 25);
   color: white;
+  text-decoration: none;
 }
 
 ::-webkit-scrollbar {
@@ -20,9 +21,79 @@ body {
   .NavHeader {
     display: flex;
     height: 64px;
+    width: 100%;
     position: fixed;
     top: 0px;
     left: 0px;
+    .NavHeaderAll {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      nav.NavHeader_Left {
+        display: flex;
+        padding-top: 14px;
+        div.NavHeader_Tab {
+        display: flex;
+        margin-left: 20px;
+          a {
+            display: flex;
+            align-items: center;
+          }
+          div {
+            display: flex;
+            justify-content: center;
+            font-size: 22px;        
+            padding: 0 12px 13px;
+            margin-right: 4px;
+          }
+          .Header_Shorts_Badge_Free {
+            position: absolute;
+            top: 10px;
+            left: 333px;
+            transform: rotate(10deg);
+          }
+        }
+      }
+      nav.NavHeader_Right {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 12px;
+        & > *:not(:first-child) {
+          margin-left: 8px;
+          width: 40px;
+          height: 40px;
+          padding-top: 6px;
+          display: flex;
+          justify-content: center;
+        }
+        .SearchInput {
+          width: 260px;
+          height: 40px;
+        }
+        .NavHeader_Login {
+          width: 58px;
+          height: 32px;
+          margin-top: 4px;
+          font-size: 16px;
+          border: 1px solid rgb(71, 71, 71);
+          border-radius: 4px;
+          padding-right: 12px;
+          padding-left: 12px;
+        }        
+        .NavHeader_Sigup {
+          width: 88px;
+          height: 32px;
+          margin-top: 4px;
+          font-size: 16px;
+          background-color: rgb(0, 210, 190);
+          color: black;
+          border: 1px;
+          border-radius: 4px;
+          padding: 7px 12px 0;
+        }
+      }
+    }
   }
   .chatList-Container {
     display: flex;
