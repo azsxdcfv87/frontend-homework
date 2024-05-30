@@ -335,6 +335,9 @@ body .chatList-Container .ChatDefault .NewChatBtn {
   body .Mobile-NavHeader ul li:last-child img {
     border-radius: 50%;
   }
+  body .chatList-Container {
+    margin-top: 0;
+  }
   body .chatList-Container .ChatList, body .chatList-Container .ChatDefault {
     display: none;
   }
