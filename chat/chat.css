@@ -290,7 +290,10 @@ body .chatList-Container .ChatDefault .NewChatBtn {
   body .NavHeader {
     display: none;
   }
-  .Mobile-NavHeader {
+  body .ChatDefault {
+    display: none;
+  }
+  body .Mobile-NavHeader {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -298,41 +301,50 @@ body .chatList-Container .ChatDefault .NewChatBtn {
     z-index: 1;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
   }
-  .Mobile-NavHeader ul {
+  body .Mobile-NavHeader ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     padding-bottom: 3px;
   }
-  .Mobile-NavHeader ul li {
+  body .Mobile-NavHeader ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .Mobile-NavHeader ul li div {
+  body .Mobile-NavHeader ul li div {
     margin-top: 2px;
     font-size: 12px;
   }
-  .Mobile-NavHeader ul li:nth-child(3) .Mobile-NavHeader-Tab-Short {
+  body .Mobile-NavHeader ul li:nth-child(3) .Mobile-NavHeader-Tab-Short {
     position: relative;
   }
-  .Mobile-NavHeader ul li:nth-child(3) .Mobile-NavHeader-Tab-Short .Header_Shorts_Badge_Free {
+  body .Mobile-NavHeader ul li:nth-child(3) .Mobile-NavHeader-Tab-Short .Header_Shorts_Badge_Free {
     position: absolute;
     top: -5px;
     left: 5px;
     transform: rotate(10deg);
   }
-  .Mobile-NavHeader ul li:last-child .Mobile-NavHeader-Tab-Me {
+  body .Mobile-NavHeader ul li:last-child .Mobile-NavHeader-Tab-Me {
     position: relative;
   }
-  .Mobile-NavHeader ul li:last-child .Mobile-NavHeader-Tab-Me .Mobile-NavHeader-Hamburger {
+  body .Mobile-NavHeader ul li:last-child .Mobile-NavHeader-Tab-Me .Mobile-NavHeader-Hamburger {
     position: absolute;
     bottom: 0px;
     right: 0px;
   }
-  .Mobile-NavHeader ul li:last-child img {
+  body .Mobile-NavHeader ul li:last-child img {
     border-radius: 50%;
+  }
+  body .chatList-Container {
+    margin-top: 0;
+  }
+  body .chatList-Container .ChatList {
+    width: 100%;
+  }
+  body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabAll, body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabUnread, body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabPin {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=chat.css.map */
