@@ -1,1 +1,341 @@
-/*# sourceMappingURL=styles.css.map */
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.15;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+body .NavHeader {
+  display: flex;
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+body .NavHeader .NavHeaderAll {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Left {
+  display: flex;
+  padding-top: 14px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Left div.NavHeader_Tab {
+  display: flex;
+  margin-left: 20px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Left div.NavHeader_Tab a {
+  display: flex;
+  align-items: center;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Left div.NavHeader_Tab div {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  padding: 0 12px 13px;
+  margin-right: 4px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Left div.NavHeader_Tab .Header_Shorts_Badge_Free {
+  position: absolute;
+  top: 10px;
+  left: 333px;
+  transform: rotate(10deg);
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right > *:not(:first-child) {
+  margin-left: 8px;
+  width: 40px;
+  height: 40px;
+  padding-top: 6px;
+  display: flex;
+  justify-content: center;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label {
+  display: flex;
+  border-radius: 20px;
+  width: 260px;
+  height: 40px;
+  background-color: rgb(71, 71, 71);
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label div.Search_Image {
+  background-color: rgb(71, 71, 71);
+  padding-left: 17px;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label img {
+  background-color: rgb(71, 71, 71);
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label .SearchInput {
+  padding-left: 4px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: rgb(71, 71, 71);
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label .SearchInput::-moz-placeholder {
+  color: white;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right div label .SearchInput::placeholder {
+  color: white;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right .NavHeader_Login {
+  width: 58px;
+  height: 32px;
+  margin-top: 4px;
+  font-size: 16px;
+  border: 1px solid rgb(71, 71, 71);
+  border-radius: 4px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+body .NavHeader .NavHeaderAll nav.NavHeader_Right .NavHeader_Sigup {
+  width: 88px;
+  height: 32px;
+  margin-top: 4px;
+  font-size: 16px;
+  background-color: rgb(0, 210, 190);
+  color: black;
+  border: 1px;
+  border-radius: 4px;
+  padding: 7px 12px 0;
+}
+body .chatList-Container {
+  display: flex;
+  margin-top: 64px;
+  height: 100%;
+  border-top: 1px solid rgba(100, 100, 100, 0.15);
+  /* 開始聊天 */
+}
+body .chatList-Container .ChatList {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 360px;
+  width: 360px;
+}
+body .chatList-Container .ChatList .ChatHeader {
+  margin-top: 12px;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 12px;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTitle .ChatHeaderTitleContent {
+  font-size: 22px;
+  font-weight: 600;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTitle .ChatHeaderTitleRight .ChatHeaderBuyDiamond {
+  margin-left: 8px;
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+}
+body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabAll, body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabUnread, body .chatList-Container .ChatList .ChatHeader .ChatHeaderTab .TabPin {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 16px;
+  padding: 10px 2px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .chatList-Container .ChatList .UserCategory {
+  display: flex;
+  flex-direction: row;
+  margin-left: 16px;
+  padding-top: 18px;
+  padding-bottom: 16px;
+  overflow-y: auto;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator {
+  padding-top: 6px;
+  width: 76px;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator .CategoryCreatorAvatar {
+  border-radius: 50%;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator .CategoryCreatorDisplayName {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator .CategoryCreatorName {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(221, 221, 221, 0.8);
+  margin-top: 2px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .chatList-Container .ChatList .UserCategory .UserCategoryCreator:not(:last-child) {
+  margin-right: 12px;
+}
+body .chatList-Container .ChatList .ChatListContent {
+  margin-top: 6px;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem {
+  display: flex;
+  height: 68px;
+  margin: 0 5px;
+  padding: 0 16px;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem img.ChatListAvatar {
+  margin-top: 10px;
+  border-radius: 50%;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail .ChatListAllName {
+  display: flex;
+  flex-direction: row;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail .ChatListAllName .ChatListDisplayName {
+  padding-left: 2px;
+  color: rgba(221, 221, 221, 0.8);
+  font-weight: 400;
+}
+body .chatList-Container .ChatList .ChatListContent .ChatListItem .ChatListDetail .ChatListContent {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+  margin-top: 12px;
+}
+body .chatList-Container .ChatDefault {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 40px;
+  border-left: 1px solid rgba(100, 100, 100, 0.15);
+}
+body .chatList-Container .ChatDefault .ChatDefaulAll {
+  padding-top: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .chatList-Container .ChatDefault .ChatDefaultTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+body .chatList-Container .ChatDefault .ChatDefaultContent {
+  font-size: 16px;
+  color: rgb(100, 100, 100);
+  margin-bottom: 20px;
+}
+body .chatList-Container .ChatDefault .NewChatBtn {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 9px 29px 10px;
+  border-radius: 4px;
+  border: 1px solid white;
+  line-height: 1;
+}
+
+@media (min-width: 769px) {
+  body .Mobile-NavHeader {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  body .NavHeader {
+    display: none;
+  }
+  body .Mobile-NavHeader {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  }
+  body .Mobile-NavHeader ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    padding-bottom: 3px;
+  }
+  body .Mobile-NavHeader ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body .Mobile-NavHeader ul li div {
+    margin-top: 2px;
+    font-size: 12px;
+  }
+  body .Mobile-NavHeader ul li:nth-child(3) .Mobile-NavHeader-Tab-Short {
+    position: relative;
+  }
+  body .Mobile-NavHeader ul li:nth-child(3) .Mobile-NavHeader-Tab-Short .Header_Shorts_Badge_Free {
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    transform: rotate(10deg);
+  }
+  body .Mobile-NavHeader ul li:last-child .Mobile-NavHeader-Tab-Me {
+    position: relative;
+  }
+  body .Mobile-NavHeader ul li:last-child .Mobile-NavHeader-Tab-Me .Mobile-NavHeader-Hamburger {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+  body .Mobile-NavHeader ul li:last-child img {
+    border-radius: 50%;
+  }
+  body .chatList-Container .ChatList, body .chatList-Container .ChatDefault {
+    display: none;
+  }
+}/*# sourceMappingURL=styles.css.map */
