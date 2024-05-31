@@ -320,28 +320,81 @@
         </div>
       </div>
       <div class="chatroomContainer">
-          <div class="chatHeader">
-            <button class="ChatHeader-BackButton"></button>
-            <div class="ChatHeader-Title">allenhsulive004</div>
-            <div class="ChatHeader-Right">
-              <img src="" alt="">
-              <img src="" alt="">
-              <img src="" alt="">
+        <div class="chatHeader">
+          <div class="ChatHeader-left">
+            <button class="ChatHeader-BackButton">
+              <img
+                src="./img/chatroom-button-back.svg"
+                alt=""
+                width="32"
+                height="32"
+              />
+            </button>
+            <div class="ChatHeader-Title">@e****0</div>
+          </div>
+          <div class="ChatHeader-Right">
+            <img
+              src="./img/chatroom_media_library.svg"
+              alt=""
+              width="32"
+              height="32"
+            />
+            <img
+              src="./img/chatroom_search.svg"
+              alt=""
+              width="32"
+              height="32"
+            />
+            <img
+              src="./img/chatroom_hamburger.svg"
+              alt=""
+              width="32"
+              height="32"
+            />
+          </div>
+        </div>
+        <div class="ChatHeader__ChatAnnounceBanner">
+          <h2>
+            本平台嚴厲禁止散佈或發送性交易相關訊息，系統將24小時監控，違反規定者將停用帳號。
+          </h2>
+        </div>
+        <div class="chat-messages" id="messages">
+          <div class="Creator-Content">
+            <img
+              src="./img/chatroom_creator_name.png"
+              alt=""
+              width="88"
+              height="88"
+            />
+            <h1>zoeeoz</h1>
+            <div class="Creator-Content-Post">32 貼文 ・ 0 限時動態</div>
+            <button class="Creator-Profile-Button">
+              <div class="Creator-Profile-Button-Text">查看個人檔案</div>
+            </button>
+          </div>
+        </div>
+        <div class="Chat-Input">
+          <div class="Chat-Input-Container">
+            <img src="./img/chatroom_record.svg" alt="" width="24" height="24" />
+            <div class="Chat-Input-Content">
+              <div class="Chat-Input-Text">
+                <img src="./img/chatroom_carma.svg" alt="" width="24" height="24"/>
+                <input
+                  type="text"
+                  id="messageInput"
+                  placeholder="輸入訊息..."
+                  autocomplete="off"
+                />
+              </div>
+              <button id="sendButton">
+                <img src="./img/chatroom_send.svg" alt="" width="24" height="24"/>
+              </button>
+            </div>
+            <div class="Chat-Gift-Container">
+              <img src="./img/chatroom_gift_fill.svg" alt="" width="24" height="24" />
             </div>
           </div>
-          <div class="ChatHeader__ChatAnnounceBanner">
-              <h2>本平台嚴厲禁止散佈或發送性交易相關訊息，系統將24小時監控，違反規定者將停用帳號。</h2>
-          </div>
-          <div class="chat-messages" id="messages">
-            <div class="Creator-Content">
-              <img src="" alt="">
-              <h1>godd</h1>
-            </div>
-          </div>
-          <div class="chat-input">
-              <input type="text" id="messageInput" placeholder="輸入訊息..." autocomplete="off">
-              <button id="sendButton">發送</button>
-          </div>
+        </div>
       </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
