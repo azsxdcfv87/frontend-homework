@@ -412,14 +412,25 @@ body .chatList-Container .ChatDefault .NewChatBtn {
   }
   body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container {
     display: flex;
-    height: 50px;
+    justify-content: space-between;
+    height: 58px;
     padding: 8px 16px;
   }
-  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container img {
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Emoji {
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     border: 1px solid rgba(100, 100, 100, 0.5);
   }
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Emoji img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Content {
     display: flex;
+  }
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Content .Chat-Input-Text {
+    width: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */

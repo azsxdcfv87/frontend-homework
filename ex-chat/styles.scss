@@ -423,14 +423,26 @@ body {
           background-color: rgb(25, 25, 25);
           .Chat-Input-Container {     
             display: flex;
-            height: 50px;
+            justify-content: space-between;
+            height: 58px;
             padding: 8px 16px;
-            img {
+            .Chat-Input-Emoji {
+              height: 40px;
+              width: 40px;
               border-radius: 50%;
               border: 1px solid rgba(100, 100, 100, 0.5);
+              img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
             }
+          }
             .Chat-Input-Content {
               display: flex;
+              .Chat-Input-Text {
+                width: 100%;
+              }
             }
           }
         }
