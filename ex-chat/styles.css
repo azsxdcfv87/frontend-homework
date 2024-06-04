@@ -9,6 +9,22 @@
   color: white;
   text-decoration: none;
 }
+* input, * button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+* input {
+  -webkit-appearance: none; /* 移除 Safari 瀏覽器的預設樣式 */
+  -moz-appearance: none; /* 移除 Firefox 瀏覽器的預設樣式 */
+  appearance: none; /* 移除現代瀏覽器的預設樣式 */
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -403,6 +419,36 @@ body .chatList-Container .ChatDefault .NewChatBtn {
     margin-top: 12px;
     border: 1px solid rgb(71, 71, 71);
   }
+  body .chatList-Container .chatroomContainer .chat-messages .chat-messages-container {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 16px 0;
+    margin-bottom: 12px;
+  }
+  body .chatList-Container .chatroomContainer .chat-messages .chat-messages-container .chatroom-message {
+    display: flex;
+    margin-top: 12px;
+    max-width: 50%;
+  }
+  body .chatList-Container .chatroomContainer .chat-messages .chat-messages-container .chatroom-message .chatroom-content-txt {
+    word-wrap: break-word;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 35, 35);
+    border-radius: 8px;
+  }
+  body .chatList-Container .chatroomContainer .chat-messages .chat-messages-container .chatroom-message .timestamp {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0px 8px;
+    font-size: 12px;
+    color: rgb(100, 100, 100);
+    line-height: 20px;
+  }
   body .chatList-Container .chatroomContainer .Chat-Input {
     position: fixed;
     bottom: 0;
@@ -415,22 +461,59 @@ body .chatList-Container .ChatDefault .NewChatBtn {
     justify-content: space-between;
     height: 58px;
     padding: 8px 16px;
+    background-color: rgb(35, 35, 35);
   }
   body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
     width: 40px;
+    margin-right: 8px;
+    padding: 1px 6px;
     border-radius: 50%;
     border: 1px solid rgba(100, 100, 100, 0.5);
   }
-  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Emoji img {
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(100, 100, 100, 0.5);
+    background-color: rgba(100, 100, 100, 0.15);
+    padding: 0 12px;
+  }
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Content .Chat-Input-Text {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: rgba(100, 100, 100, 0.15);
   }
-  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Content {
-    display: flex;
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Content .Chat-Input-Text img {
+    background-color: rgba(100, 100, 100, 0.15);
   }
-  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Container .Chat-Input-Content .Chat-Input-Text {
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Content .Chat-Input-Text input {
     width: 100%;
+    margin-left: 12px;
+  }
+  body .chatList-Container .chatroomContainer .Chat-Input .Chat-Input-Content button img {
+    background-color: rgba(100, 100, 100, 0.15);
+  }
+  body .chatList-Container .chatroomContainer .Chat-Gift-Container {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgb(0, 210, 190), rgb(93, 130, 188) 52%, rgb(142, 55, 215));
+    outline: none;
+    cursor: pointer;
+    margin-left: 12px;
+    border: none;
+  }
+  body .chatList-Container .chatroomContainer .Chat-Gift-Container img {
+    background: linear-gradient(135deg, rgb(0, 210, 190), rgb(93, 130, 188) 52%, rgb(142, 55, 215));
   }
 }/*# sourceMappingURL=styles.css.map */

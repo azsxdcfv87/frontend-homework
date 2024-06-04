@@ -11,8 +11,8 @@ app.use(express.static(__dirname));
 io.on('connection', (socket) => {
     console.log('一位使用者連線了');
     
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
+    socket.on('chat message', (msg, timestamp) => {
+        io.emit('chat message', msg, timestamp);
     });
 
     socket.on('disconnect', () => {
@@ -22,5 +22,5 @@ io.on('connection', (socket) => {
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-    console.log(`伺服器正在運行於 http://localhost:${PORT}`);
+    console.log(`使用 ${PORT} 連線中`);
 });
